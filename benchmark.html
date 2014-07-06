@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Map Benchmark</title>
+        <script type="text/javascript">
+            function print(msg) {
+                document.getElementById("log").innerHTML += msg + "\n";
+            }
+            function load(file) {
+                print("Stub load " + file);
+            }
+        </script>
+    </head>
+    <body>
+        <a href="javascript:benchmark(create_old, 'Old')">Old</a>
+        <a href="javascript:benchmark(create_new, 'New')">New</a>
+        <pre id="log"></pre>
+        <script src="old.js"></script>
+        <script src="new.js"></script>
+        <script src="benchmark.js" async="true"></script>
+    </body>
+</html>
