@@ -1,6 +1,6 @@
 function create_new() {
     m = {
-        
+
     entries: undefined,
     mask: undefined,
     maximumDistanceFromIdeal: undefined,
@@ -39,7 +39,7 @@ function create_new() {
 
         var replaced = this.insert(this.make_entry(x, z, value));
         if (replaced) {
-            return replaced;
+            return replaced.value;
         }
         this.size++;
         if (this.size >= this.resizeThreshold) {
