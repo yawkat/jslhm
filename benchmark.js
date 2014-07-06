@@ -64,6 +64,9 @@ function measure(m, func) {
 }
 
 function benchmark(m, label) {
+    print("Reps: " + REPS);
+    print("Count: " + LENGTH);
+
     print("");
     print("Testing " + label + "...");
     print("Put:      " + measure(m, benchmark_put))
@@ -71,9 +74,9 @@ function benchmark(m, label) {
     print("Get Miss: " + measure(m, benchmark_put))
     print("Rem Hit:  " + measure(m, benchmark_put))
     print("Rem Miss: " + measure(m, benchmark_put))
+    print("--------------------------------------");
+    print("");
 }
-
-print("Count: " + LENGTH);
 
 /*
 benchmark(create_old(), "Old");

@@ -8,11 +8,26 @@
             function load(file) {
                 print("Stub load " + file);
             }
+            function do_benchmark(factory, tag) {
+                REPS = parseInt(document.getElementById("reps").value);
+                LENGTH = parseInt(document.getElementById("count").value);
+                setTimeout(function() {
+                    benchmark(factory, tag);
+                }, 0);
+            }
         </script>
     </head>
     <body>
-        <a href="javascript:benchmark(create_old, 'Old')">Old</a>
-        <a href="javascript:benchmark(create_new, 'New')">New</a>
+        <a href="javascript:do_benchmark(create_old, 'Old')">Old</a>
+        <a href="javascript:do_benchmark(create_new, 'New')">New</a>
+        <div>
+            <label for="reps">Reps</label>
+            <input id="reps" name="reps" type="number" min="1" value="10000" />
+        </div>
+        <div>
+            <label for="count">Size</label>
+            <input id="count" name="count" type="number" min="1" value="100" />
+        </div>
         <pre id="log"></pre>
         <script src="old.js"></script>
         <script src="new.js"></script>
